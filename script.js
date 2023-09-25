@@ -38,7 +38,7 @@ document.querySelectorAll('.op').forEach(op => {
                 operator = op;
                 break;
         }
-  console.log(operator)
+  //console.log(operator)
     })
 });
 
@@ -75,15 +75,32 @@ const digits = document.querySelectorAll('.digit').forEach(digit => {
     digit.addEventListener('click',getDisplay)
 });
 
-let digitTx = []
+//Display muestra mas de un numero pero necesitamos arreglar el problema del almacenamiento en cada una de
+//las variables numOne y numTwo
+let digTx1 = []
+let digTx2 = []
 function getDisplay (e){
-    let digito = e.srcElement.innerText
-    digitTx.push(digito)
-    let jDigit = +digitTx.join('')
-    document.querySelector('.display').textContent = jDigit
-    if(!numOne) {numOne = jDigit}
-    else{numTwo = jDigit}
-    console.log(jDigit)
-    console.log(jDigit)
+    let dig = +(e.srcElement.innerText)
+    //console.log(typeof dig)
+    if (!isNaN(dig)){
+        if(operator === undefined){
+        digTx1.push(dig)
+        let jDigit = +digTx1.join('')
+        document.querySelector('.display').textContent = jDigit
+        numOne = jDigit
+        console.log('olanda')
+        console.log(typeof jDigit)
+        }
+        else {
+            digTx2.push(dig)
+            let jDigit = +digTx2.join('')
+            document.querySelector('.display').textContent = jDigit
+            numTwo = jDigit
+            console.log('tomar por culo')
+            }
+        }
+    else {
+        console.log('a tu mama')}
 } 
 
+//console.log(operator)
