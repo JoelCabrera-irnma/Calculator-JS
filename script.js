@@ -109,10 +109,24 @@ const signs = document.querySelectorAll('.sign').forEach(digit => {
 });
 
 function getSign () {
-    if(storeResult===undefined){console.log('jaja')}
-    if(storeResult!== undefined){
+    if(storeResult ===undefined){console.log('jaja')}
+    if(storeResult !== undefined){
         numOne = storeResult
         numTwo = null
         digTx2 = []
         console.log('jojojo')}
 }
+
+document.querySelector('.clear').addEventListener('click',reset)
+
+function reset() {
+    numOne = undefined
+    numTwo = undefined
+    operator = undefined
+    storeResult = undefined
+    digTx1 = []
+    digTx2 = []
+    document.querySelector('.display').textContent = '5+3'
+}
+
+//console.log()
