@@ -1,7 +1,7 @@
 let numOne 
 let numTwo 
 let operator
-
+let storeResult 
 
 function suma(a,b){
     return a + b
@@ -48,24 +48,28 @@ function operate (){
     if (operator==='+'){
         let result = suma(numOne,numTwo)
         console.log(result)
+        storeResult = result
         document.querySelector('.display').textContent = result
         return result
     }
     if (operator==='-'){
         let result = resta(numOne,numTwo)
         console.log(result)
+        storeResult = result
         document.querySelector('.display').textContent = result
         return result
     }
     if (operator=='*'){
         let result = multiplicacion(numOne,numTwo)
         console.log(result)
+        storeResult = result
         document.querySelector('.display').textContent = result
         return result
     }
     if (operator=='/'){
         let result = division(numOne,numTwo)
         console.log(result)
+        storeResult = result
         document.querySelector('.display').textContent = result
         return result
     }
@@ -80,16 +84,15 @@ const digits = document.querySelectorAll('.digit').forEach(digit => {
 let digTx1 = []
 let digTx2 = []
 function getDisplay (e){
-    let dig = +(e.srcElement.innerText)
+    let dig = e.srcElement.innerText
     //console.log(typeof dig)
-    if (!isNaN(dig)){
         if(operator === undefined){
         digTx1.push(dig)
         let jDigit = +digTx1.join('')
         document.querySelector('.display').textContent = jDigit
         numOne = jDigit
         console.log('olanda')
-        console.log(typeof jDigit)
+        //console.log(typeof jDigit)
         }
         else {
             digTx2.push(dig)
@@ -98,9 +101,18 @@ function getDisplay (e){
             numTwo = jDigit
             console.log('tomar por culo')
             }
-        }
-    else {
-        console.log('a tu mama')}
 } 
 
 //console.log(operator)
+const signs = document.querySelectorAll('.sign').forEach(digit => {
+    digit.addEventListener('click',getSign)
+});
+
+function getSign () {
+    if(storeResult===undefined){console.log('jaja')}
+    if(storeResult!== undefined){
+        numOne = storeResult
+        numTwo = null
+        digTx2 = []
+        console.log('jojojo')}
+}
