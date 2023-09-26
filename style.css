@@ -1,18 +1,66 @@
 
-.display{
+.device{
+    border: 1px solid blue;
+    width: 440px;
+    height: 470px;
     margin: 0 auto;
-    border: 2px solid red;
-    width: 180px;
-    font-size: 50px;
-    margin-bottom: 20px;
-    margin-top: 100px;
+    margin-top: 50px;
+    box-sizing: border-box;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
-.content{
+.content-display{
+    display: flex;
+}
+.display{
+    border: 2px solid red;
+    /*width: 280px;
+    box-sizing: border-box;*/
+    padding: 0 8px;
+    font-size: 45px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    text-align: right;
+}
+
+.content-mid{
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin-bottom: 5px;
 }
+.content-mid > button{
+    flex: 1;
+    height: 38px;
+}
+
+.content-down{
+    display: flex;
+    flex: 1;
+}
+
+.content-op{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+.content-op>button{
+    flex-grow: 1;
+}
+
+.content-digitos{
+    flex: 3;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3,1fr);
+}
+.digit0{
+    grid-column: 1 / 3
+}
+
 button{
     font-size: 20px;
 }
