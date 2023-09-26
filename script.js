@@ -49,28 +49,28 @@ function operate (){
         let result = suma(numOne,numTwo)
         console.log(result)
         storeResult = result
-        document.querySelector('.display').textContent = result
+        document.querySelector('.display').textContent = Number(result.toFixed(5))
         return result
     }
     if (operator==='-'){
         let result = resta(numOne,numTwo)
         console.log(result)
         storeResult = result
-        document.querySelector('.display').textContent = result
+        document.querySelector('.display').textContent = Number(result.toFixed(5))
         return result
     }
     if (operator=='*'){
         let result = multiplicacion(numOne,numTwo)
         console.log(result)
         storeResult = result
-        document.querySelector('.display').textContent = result
+        document.querySelector('.display').textContent = Number(result.toFixed(5))
         return result
     }
     if (operator=='/'){
         let result = division(numOne,numTwo)
         console.log(result)
         storeResult = result
-        document.querySelector('.display').textContent = result
+        document.querySelector('.display').textContent = Number(result.toFixed(5))
         return result
     }
 }
@@ -88,17 +88,17 @@ function getDisplay (e){
     //console.log(typeof dig)
         if(operator === undefined){
         digTx1.push(dig)
-        let jDigit = +digTx1.join('')
+        let jDigit = digTx1.join('')
         document.querySelector('.display').textContent = jDigit
-        numOne = jDigit
+        numOne = +jDigit
         console.log('olanda')
         //console.log(typeof jDigit)
         }
         else {
             digTx2.push(dig)
-            let jDigit = +digTx2.join('')
+            let jDigit = digTx2.join('')
             document.querySelector('.display').textContent = jDigit
-            numTwo = jDigit
+            numTwo = +jDigit
             console.log('tomar por culo')
             }
 } 
