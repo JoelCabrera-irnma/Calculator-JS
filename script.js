@@ -129,4 +129,17 @@ function reset() {
     document.querySelector('.display').textContent = '5+3'
 }
 
-//console.log()
+const buttons = document.querySelectorAll('button')
+buttons.forEach(button => {
+    button.addEventListener('click',changeClass)
+});
+
+function changeClass(){
+        this.classList.add('buttonSc');
+        setTimeout(()=>{
+            this.classList.remove('buttonSc')
+        },300)
+}
+
+
+//console.log(doc)
